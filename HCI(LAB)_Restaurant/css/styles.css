@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:  #360346;
+}
+
+header {
+    background-image: linear-gradient(#3d0000, #250000);
+    color: #fde400;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .logo {
+    width: 150px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fde400;
+    text-decoration: none;
+    padding: 5px 0;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fde400;
+    transition: width .3s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+    color: #fde400;
+}
+
+.hero {
+    background-image: linear-gradient(#3d0000, #250000);
+    color: #fde400;
+    padding: 50px 0;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+footer {
+    background-image: linear-gradient(#3d0000, #250000);
+    color: #fde400;
+    text-align: center;
+    padding: 1px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    border-width: 8px;
+    border-color: white; /* Change to your desired color */
+    border-style: solid; /* Ensure the border is solid */
+}
+
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+form button:hover {
+    color: yellow;
+}
+
+.menu-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.menu-list li {
+    margin-bottom: 20px; /* Add some space between items */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-list img {
+    width: 200px; /* Set a fixed width for the images */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px; /* Add some space between text and image */
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center; /* Center the items */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Add vertical spacing */
+    }
+
+    form {
+        padding: 15px; /* Reduce padding */
+    }
+
+    form input, form textarea {
+        width: 100%; /* Make inputs full width */
+    }
+
+    .menu-list img {
+        width: 100%; /* Make images responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .hero {
+        padding: 30px 0; /* Adjust padding for hero section */
+    }
+
+    .hero h1 {
+        font-size: 2em; /* Reduce font size */
+    }
+
+    footer {
+        font-size: 0.9em; /* Reduce footer font size */
+    }
+}
