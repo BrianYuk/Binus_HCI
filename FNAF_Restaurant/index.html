@@ -50,7 +50,29 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the navbar
+            var navbar = document.querySelector(".navbar");
+    
+            // Get the offset position of the navbar
+            var sticky = navbar.offsetTop;
+    
+            // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+            function checkSticky() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky");
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+    
+            // When the user scrolls the page, execute checkSticky
+            window.onscroll = function() {
+                checkSticky();
+            };
+        });
+        </script>
     <script src="script.js"></script>
 </body>
 </html>
-
