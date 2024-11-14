@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FNAF Themed Restaurant - About Us</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('images/fnafbg.jpg'); background-size: cover; height: 100vh;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Fazbear's Pizzeria</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Us Section -->
+    <section id="about" class="bg-dark text-white py-5">
+        <div class="container text-center">
+            <h2>About Us</h2>
+            <p>Learn more about the history and thrill of our FNAF themed restaurant. Come meet our wonderful animatronics that will bring a smile to your faces. We have Freddy Fazbear the main star of the show with his fantastic singing skills. Bonnie the chill guitarist, who's jamming skills will blow your mind! Chica the chicken, a sweetheart and one of our chefs in the establishment but make sure not to take her cupcake away or else she'll get mad. And last but not least, Foxy the pirate fox, who'll entertain the kids with tales of his adventure at the seven seas. Beware of trying to steal his treasures or face the wrath of the pirate. Would you like to hear about the entire FNAF lore? The FNAF lore is very complicated for newcomers but you can always start things off by clicking on the link below to begin your journey through this rabbit hole.</p>
+            <a href="https://freddy-fazbears-pizza.fandom.com/f/p/2977888211042401874">FNAF Lore (Enter at your own risk)</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Fazbear's Pizzeria. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the navbar
+            var navbar = document.querySelector(".navbar");
+    
+            // Get the offset position of the navbar
+            var sticky = navbar.offsetTop;
+    
+            // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+            function checkSticky() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky");
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+    
+            // When the user scrolls the page, execute checkSticky
+            window.onscroll = function() {
+                checkSticky();
+            };
+        });
+        </script>
+    <script src="script.js"></script>
+</body>
+</html>
