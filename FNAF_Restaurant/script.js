@@ -11,3 +11,20 @@ $(document).ready(function(){
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var navbar = document.querySelector(".navbar");
+    var sticky = navbar.offsetTop;
+
+    function checkSticky() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+
+    window.onscroll = function() {
+        checkSticky();
+    };
+});
