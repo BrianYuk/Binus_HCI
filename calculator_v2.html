@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .error {
+          border: 2px solid red;
+          background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <label for="textbox1">Textbox 1:</label>
+        <input type="text" id="textbox1" onblur="validateInput(this)" /><br />
+    
+        <label for="textbox2">Textbox 2:</label>
+        <input type="text" id="textbox2" onblur="validateInput(this)" /><br />
+    
+        <button onclick="performOperation('+')">+</button>
+        <button onclick="performOperation('-')">-</button>
+        <button onclick="performOperation('*')">*</button>
+        <button onclick="performOperation('/')">/</button>
+    
+        <p id="result"></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function validateInput(element) {
+          if (element.value.length > 10) {
+            element.classList.add('error');
+          } else {
+            element.classList.remove('error');
+          }
+        }
+      
+        function performOperation(operator) {
+          const textbox1 = document.getElementById('textbox1').value;
+          const textbox2 = document.getElementById('textbox2').value;
+      
+          // Parse the input values as numbers
+          const num1 = parseFloat(textbox1);
+          const num2 = parseFloat(textbox2);
+      
+          if (isNaN(num1) || isNaN(num2)) {
+            document.getElementById('result').innerText = 'Please enter valid numbers!';
+            return;
+          }
+      
+          let result;
+      
+          // Perform the operation based on the selected operator
+          switch (operator) {
+            case '+':
+              result = num1 + num2;
+              break;
+            case '-':
+              result = num1 - num2;
+              break;
+            case '*':
+              result = num1 * num2;
+              break;
+            case '/':
+              result = num2 !== 0 ? num1 / num2 : 'Cannot divide by zero';
+              break;
+            default:
+              result = 'Invalid operation';
+          }
+      
+          // Display the result
+          document.getElementById('result').innerText = `Result: ${result}`;
+        }
+      </script>
+      
+</body>
+</html>
+
+  
